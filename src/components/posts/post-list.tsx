@@ -10,7 +10,7 @@ interface PostListProps {
 export default async function PostList({ fetchData }: PostListProps) {
   const posts = await fetchData();
 
-  console.log(JSON.stringify(posts));
+  console.log("aaaaaaa", JSON.stringify(posts));
 
   const renderedPosts = posts.map((post) => {
     const topicSlug = post.topic.slug;
@@ -21,6 +21,7 @@ export default async function PostList({ fetchData }: PostListProps) {
 
     return (
       <div key={post.id} className="border rounded p-2">
+        <p>UUUU</p>
         <Link href={paths.postShow(topicSlug, post.id)}>
           <h3 className="text-lg font-bold">{post.title}</h3>
           <div className="flex flex-row gap-8">
